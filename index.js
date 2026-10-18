@@ -5,18 +5,18 @@ function createLoginTracker(userInfo){
 
 const login = (passwordAttempt)=>{
   if(isLocked){
-    return 'Account is locked';
+    return 'Account locked due to too many failed login attempts';
   }
-  attemptCount++;
-  if(passwordAttempt === userInfo.password && passwordAttempt<=3){
-    return 'Login is successfully'
+  if(passwordAttempt === userInfo.password){
+    return 'Login successfully'
   }
-  if(passwordAttempt != userInfo.password && passwordAttempt<=3){
-    return 'Login failed'
-  }
+  attemptCount++
+  // if(passwordAttempt != userInfo.password && passwordAttempt<=3){
+  //   return 'Login failed'
+  // }
   if(attemptCount >= 3){
     isLocked = true
-    return 'Account is locked due to too many failed login attempts'
+    return 'Account locked due to too many failed login attempts'
   }
   return `Attempt: ${attemptCount}: Login failed`
 
