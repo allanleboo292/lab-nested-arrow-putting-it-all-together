@@ -8,7 +8,7 @@ const login = (passwordAttempt)=>{
     return 'Account locked due to too many failed login attempts';
   }
   if(passwordAttempt === userInfo.password){
-    return 'Login successfully'
+    return 'Login successful'
   }
   attemptCount++
   // if(passwordAttempt != userInfo.password && passwordAttempt<=3){
@@ -18,7 +18,7 @@ const login = (passwordAttempt)=>{
     isLocked = true
     return 'Account locked due to too many failed login attempts'
   }
-  return `Attempt: ${attemptCount}: Login failed`
+  return `Attempt ${attemptCount}: Login failed`
 
 };
 return login
