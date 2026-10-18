@@ -18,7 +18,7 @@ const login = (passwordAttempt)=>{
     isLocked = true
     return 'Account is locked due to too many failed login attempts'
   }
-  return `Attemp: ${attemptCount}: Login failed`
+  return `Attempt: ${attemptCount}: Login failed`
 
 };
 return login
